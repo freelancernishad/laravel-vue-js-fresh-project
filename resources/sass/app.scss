@@ -1,0 +1,50 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+@import '~noty/src/noty.scss';
+// Bootstrap
+// @import '~bootstrap/scss/bootstrap';
+
+.noty_bar {
+    margin: 8px 0;
+}
+
+.noty_type__success {
+    background: green;
+    padding: 10px 12px;
+    color: white;
+}
+.noty_type__error {
+    background: #DC3545;
+    padding: 10px 12px;
+    color: white;
+}
+
+
+.noty_type__alert {
+    background: #DC3545;
+    padding: 10px 12px;
+    color: white;
+}
+
+.noty_type__warning {
+    background: #FFC107;
+    padding: 10px 12px;
+    color: black;
+}
+
+
+.noty_type__info {
+    background: #0DCAF0;
+    padding: 10px 12px;
+    color: white;
+}
+
+.noty_type__information {
+    background: #0DCAF0;
+    padding: 10px 12px;
+    color: white;
+}
+
