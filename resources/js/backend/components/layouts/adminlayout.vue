@@ -85,14 +85,13 @@
                 <div class="sidebar-menu-content" id="dashboardheight">
                     <ul class="nav nav-sidebar-menu sidebar-toggle-view navBar">
                         <li class="nav-item" @click="submenu(0)">
-                            <router-link to="/" class="nav-link"><i
+                            <router-link :to="{name:'home'}" class="nav-link"><i
                                     class="flaticon-dashboard"></i><span>Dashboard</span></router-link>
                         </li>
-                        <li class="nav-item" @click="submenu(0)">
-                            <router-link class="nav-link" to="/register"><i class="flaticon-dashboard"></i><span>Add
-                                    Salary</span></router-link>
-                        </li>
-                        <li class="nav-item sidebar-nav-item" :class="{ active: selected == 1 }">
+
+
+
+                        <!-- <li class="nav-item sidebar-nav-item" :class="{ active: selected == 1 }">
                             <a href="javascript:void(0)" class="nav-link" @click="submenu(1)" ref="Acconunt"><i
                                     class="flaticon-technological"></i><span>Acconunt</span></a>
                             <transition name="slide">
@@ -105,22 +104,9 @@
                                 </ul>
                             </transition>
                         </li>
+ -->
 
-                        <li class="nav-item sidebar-nav-item" :class="{ active: selected == 2 }">
-                            <a href="#" class="nav-link" @click="submenu(2)" ref="Acconunt2"><i
-                                    class="flaticon-technological"></i><span>Acconunt2</span></a>
-                            <transition name="slide">
-                                <ul class="nav sub-group-menu menu-open child" v-if="selected == 2"
-                                    style="display:block">
-                                    <li class="nav-item">
-                                        <router-link to="/school/payment" class="nav-link"><i
-                                                class="fas fa-angle-right"></i> Payments</router-link>
-                                    </li>
-                                </ul>
-                            </transition>
-                        </li>
 
-                
 
                     </ul>
                 </div>
@@ -130,8 +116,8 @@
                 <slot></slot>
                 <!-- Footer Area Start Here -->
                 <footer class="footer-wrap-layout1">
-                    <div class="copyright">© Copyrights <a href="#">akkhor</a> 2019. All rights reserved. Designed by <a
-                            href="#">PsdBosS</a></div>
+                    <div class="copyright">© Copyrights <a href="#">Company name</a> 2019. All rights reserved. Developed by <a target="_blank"
+                            href="https://api.whatsapp.com/send?phone=8801909756552&text=I%27m%20interested%20in%20your%20services">Freelancer Nishad</a></div>
                 </footer>
                 <!-- Footer Area End Here -->
             </div>

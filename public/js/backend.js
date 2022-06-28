@@ -2511,20 +2511,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   created: function created() {
     if (localStorage.getItem('selectedMenu')) {
@@ -19191,7 +19177,7 @@ var render = function () {
                                 [
                                   _c("i", { staticClass: "flaticon-turn-off" }),
                                   _vm._v(
-                                    " Logout\n                                    "
+                                    " Logout\n                                       "
                                   ),
                                 ]
                               ),
@@ -19246,168 +19232,15 @@ var render = function () {
                       [
                         _c(
                           "router-link",
-                          { staticClass: "nav-link", attrs: { to: "/" } },
+                          {
+                            staticClass: "nav-link",
+                            attrs: { to: { name: "home" } },
+                          },
                           [
                             _c("i", { staticClass: "flaticon-dashboard" }),
                             _c("span", [_vm._v("Dashboard")]),
                           ]
                         ),
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      {
-                        staticClass: "nav-item",
-                        on: {
-                          click: function ($event) {
-                            return _vm.submenu(0)
-                          },
-                        },
-                      },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            staticClass: "nav-link",
-                            attrs: { to: "/register" },
-                          },
-                          [
-                            _c("i", { staticClass: "flaticon-dashboard" }),
-                            _c("span", [
-                              _vm._v(
-                                "Add\n                                Salary"
-                              ),
-                            ]),
-                          ]
-                        ),
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      {
-                        staticClass: "nav-item sidebar-nav-item",
-                        class: { active: _vm.selected == 1 },
-                      },
-                      [
-                        _c(
-                          "a",
-                          {
-                            ref: "Acconunt",
-                            staticClass: "nav-link",
-                            attrs: { href: "javascript:void(0)" },
-                            on: {
-                              click: function ($event) {
-                                return _vm.submenu(1)
-                              },
-                            },
-                          },
-                          [
-                            _c("i", { staticClass: "flaticon-technological" }),
-                            _c("span", [_vm._v("Acconunt")]),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("transition", { attrs: { name: "slide" } }, [
-                          _vm.selected == 1
-                            ? _c(
-                                "ul",
-                                {
-                                  staticClass:
-                                    "nav sub-group-menu menu-open child",
-                                  staticStyle: { display: "block" },
-                                },
-                                [
-                                  _c(
-                                    "li",
-                                    { staticClass: "nav-item" },
-                                    [
-                                      _c(
-                                        "router-link",
-                                        {
-                                          staticClass: "nav-link",
-                                          attrs: { to: "/school/payment" },
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass: "fas fa-angle-right",
-                                          }),
-                                          _vm._v(" Payments"),
-                                        ]
-                                      ),
-                                    ],
-                                    1
-                                  ),
-                                ]
-                              )
-                            : _vm._e(),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      {
-                        staticClass: "nav-item sidebar-nav-item",
-                        class: { active: _vm.selected == 2 },
-                      },
-                      [
-                        _c(
-                          "a",
-                          {
-                            ref: "Acconunt2",
-                            staticClass: "nav-link",
-                            attrs: { href: "#" },
-                            on: {
-                              click: function ($event) {
-                                return _vm.submenu(2)
-                              },
-                            },
-                          },
-                          [
-                            _c("i", { staticClass: "flaticon-technological" }),
-                            _c("span", [_vm._v("Acconunt2")]),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("transition", { attrs: { name: "slide" } }, [
-                          _vm.selected == 2
-                            ? _c(
-                                "ul",
-                                {
-                                  staticClass:
-                                    "nav sub-group-menu menu-open child",
-                                  staticStyle: { display: "block" },
-                                },
-                                [
-                                  _c(
-                                    "li",
-                                    { staticClass: "nav-item" },
-                                    [
-                                      _c(
-                                        "router-link",
-                                        {
-                                          staticClass: "nav-link",
-                                          attrs: { to: "/school/payment" },
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass: "fas fa-angle-right",
-                                          }),
-                                          _vm._v(" Payments"),
-                                        ]
-                                      ),
-                                    ],
-                                    1
-                                  ),
-                                ]
-                              )
-                            : _vm._e(),
-                        ]),
                       ],
                       1
                     ),
@@ -19492,9 +19325,18 @@ var staticRenderFns = [
     return _c("footer", { staticClass: "footer-wrap-layout1" }, [
       _c("div", { staticClass: "copyright" }, [
         _vm._v("© Copyrights "),
-        _c("a", { attrs: { href: "#" } }, [_vm._v("akkhor")]),
-        _vm._v(" 2019. All rights reserved. Designed by "),
-        _c("a", { attrs: { href: "#" } }, [_vm._v("PsdBosS")]),
+        _c("a", { attrs: { href: "#" } }, [_vm._v("Company name")]),
+        _vm._v(" 2019. All rights reserved. Developed by "),
+        _c(
+          "a",
+          {
+            attrs: {
+              target: "_blank",
+              href: "https://api.whatsapp.com/send?phone=8801909756552&text=I%27m%20interested%20in%20your%20services",
+            },
+          },
+          [_vm._v("Freelancer Nishad")]
+        ),
       ]),
     ])
   },
