@@ -42,7 +42,7 @@ export default {
 
 	created(){
 		if (User.loggedIn()) {
-			this.$router.push({name: 'home'})
+			window.location.href = '/dashboard'
 		}
 	},
 
@@ -69,11 +69,12 @@ export default {
             this.emptyFields = true;
          } else {
 
-       		axios.post('/api/auth/login', this.form)
+       		axios.post('/login', this.form)
 			.then(res => {
 				User.responseAfterLogin(res)
                 Notification.customSuccess('Signed in successfully Complete');
-				this.$router.push({name: 'home'})
+				// this.$router.push({name: 'home'})
+              	window.location.href = '/dashboard'
 			})
 			.catch(error => this.errors = error.response.data.errors)
 

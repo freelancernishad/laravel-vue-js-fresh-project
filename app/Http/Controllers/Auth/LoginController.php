@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 class LoginController extends Controller
 {
     /*
@@ -31,7 +32,7 @@ class LoginController extends Controller
 
 
 
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/dashboard';
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
@@ -39,32 +40,75 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $input = $request->all();
+        // $input = $request->all();
 
-        $this->validate($request, [
+        // $this->validate($request, [
+        //     'email' => 'required|email',
+        //     'password' => 'required',
+        // ]);
+
+        // if(auth::attempt(array('email' => $input['email'], 'password' => $input['password'])))
+        // {
+        //     // return auth::user();
+
+        //     if (auth()->user()) {
+        //         return redirect('dashboard');
+        //     }
+
+
+
+
+        // }else{
+        //     return redirect()->route('login')
+        //         ->with('error','Email-Address And Password Are Wrong.');
+        // }
+
+
+
+
+        $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required',
         ]);
-
-        if(auth::attempt(array('email' => $input['email'], 'password' => $input['password'])))
-        {
-            // return auth::user();
-
-            if (auth()->user()->role == 'admin') {
-                return redirect()->route('home');
-            }
-            if (auth()->user()->role == 'sub') {
-                return redirect('sub');
-            }else{
-                return redirect()->route('login');
-            }
-
-
-
-        }else{
-            return redirect()->route('login')
-                ->with('error','Email-Address And Password Are Wrong.');
+        if ($validator->fails()) {
+            return sent_error('validation error', $validator->errors(), 422);
         }
 
+        $credentials = $request->only('school_id','email', 'password');
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+            $data['id'] = $user->id;
+            $data['school_id'] = $user->school_id;
+            $data['name'] = $user->name;
+            $data['email '] = $user->email;
+            $data['access_token'] = $user->createToken('accessToken')->accessToken;
+            //  return sent_response('Login Success', $data);
+            return $this->respondWithToken($data['access_token']);
+        } else {
+            return sent_error('Unauthorised', '', 401);
+        }
+
+
+
+
     }
+
+
+    protected function respondWithToken($token)
+    {
+        return response()->json([
+            'access_token' => $token,
+            'token_type' => 'bearer',
+            'expires_in' => 60,
+
+            'user_id' => auth()->user()->id,
+            'name' => auth()->user()->name,
+            'email' => auth()->user()->email,
+            'role' => auth()->user()->role,
+            'class' => auth()->user()->class,
+            'teacherOrstudent' => auth()->user()->teacherOrstudent,
+            'users' => auth()->user(),
+        ]);
+    }
+
 }

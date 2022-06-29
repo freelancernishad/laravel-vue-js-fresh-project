@@ -1,13 +1,24 @@
 <template>
+<div>
+
+    <form action="/logout" name="logout" method="post">
+
+    </form>
+
+</div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
 
 	created(){
         User.loggedOut();
         Notification.customSuccess('Logout successfully Complete');
-		this.$router.push({name: '/login'})
+axios.post('/logout').then(()=>{
+    window.location.href = '/'
+})
 	}
 }
 </script>

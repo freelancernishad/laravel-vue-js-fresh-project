@@ -27,7 +27,7 @@
 <body>
 
     <div id="app">
-        <component :is="$route.meta.layout || 'div'">
+        <component :is="$route.meta.layout || 'div'"   :user="{{Auth::user()}}">
             <router-view />
           </component>
 

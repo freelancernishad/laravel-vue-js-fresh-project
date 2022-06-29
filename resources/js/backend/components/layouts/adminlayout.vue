@@ -127,7 +127,14 @@
 </template>
 <script>
 export default {
+     props: ['user'],
     created() {
+
+		if (!User.loggedIn()) {
+			window.location.href = '/'
+		}
+
+        console.log(this.user)
         if (localStorage.getItem('selectedMenu')) {
             this.selected = localStorage.getItem('selectedMenu')
         }

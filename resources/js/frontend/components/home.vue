@@ -1,6 +1,6 @@
 <template>
     <div>
-Welcome home page <a href="/dashboard/login">Login</a>
+Welcome home page <router-link to="/login">Login</router-link>
     </div>
 </template>
 <script>

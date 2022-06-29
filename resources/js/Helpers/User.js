@@ -68,7 +68,6 @@ class User {
     loggedIn() {
         return this.hasToken()
     }
-
     loggedOut() {
         return  AppStorage.clear();
     }

@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
 
 
 
@@ -21,6 +23,9 @@ use Illuminate\Support\Facades\Route;
 
 // Auth::routes();
 
+Route::post('login',[LoginController::class,'login']);
+Route::post('logout',[LoginController::class,'logout']);
+
 // Route::group(['middleware' => ['is_admin']], function() {
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // });
@@ -29,11 +34,15 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/sub', [App\Http\Controllers\HomeController::class, 'sub'])->name('sub');
 // });
 
-Route::get('/dashboard/{vue_capture?}', function () {
-    return view('layout');
-})->where('vue_capture', '[\/\w\.-]*');
+Route::group(['prefix' => 'dashboard','middleware' => ['auth']], function() {
+    Route::get('/{vue_capture?}', function () {
+        // return   auth()->user();
+        return view('layout');
+    })->where('vue_capture', '[\/\w\.-]*')->name('dashboard');
+
+});
 
 
 Route::get('/{vue_capture?}', function () {
     return view('frontlayout');
-})->where('vue_capture', '[\/\w\.-]*');
+})->where('vue_capture', '[\/\w\.-]*')->name('frontend');
