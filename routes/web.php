@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Role;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
@@ -36,8 +37,11 @@ Route::post('logout',[LoginController::class,'logout']);
 
 Route::group(['prefix' => 'dashboard','middleware' => ['auth']], function() {
     Route::get('/{vue_capture?}', function () {
-        // return   auth()->user();
-        return view('layout');
+        // return   Auth::user()->roles->permission;
+
+        $roles = Role::all();
+
+        return view('layout',compact('roles'));
     })->where('vue_capture', '[\/\w\.-]*')->name('dashboard');
 
 });

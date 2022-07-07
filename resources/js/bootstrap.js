@@ -11,6 +11,8 @@ import User from './helpers/User';
 window.User = User
 import Notification from './helpers/Notification';
 window.Notification = Notification
+import common from './common'
+Vue.mixin(common)
 // window._ = require('lodash');
 window.Noty = require('noty');
 try {

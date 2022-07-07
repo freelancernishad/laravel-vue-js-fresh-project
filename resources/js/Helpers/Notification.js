@@ -96,6 +96,16 @@ class Notification{
         this.successSound()
 	}
 
+    customError(mess){
+		new Noty({
+			type: 'error',
+			layout: 'topRight',
+			text: mess,
+			timeout: 2000,
+		}).show();
+        this.errorSound()
+	}
+
 	cart_delete(){
 		new Noty({
 			type: 'error',

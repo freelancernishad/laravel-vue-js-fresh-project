@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\api;
 use Exception;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -8,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+
 class authController extends Controller
 {
     public function login(Request $r)
@@ -214,4 +216,33 @@ class authController extends Controller
             return sent_error('Data Not Found!');
         }
     }
+
+    public function roleAssign(Request $request)
+    {
+
+
+            if($request->type=='Update'){
+                $roles = Role::find($request->roleName);
+                $roles->update(['permission'=>$request->permission]);
+                return  'Role update successfully completed';
+            }else{
+
+                $roles = Role::where('roleName',$request->roleName)->count();;
+if($roles>0){
+    return  'Role Already Exists!';
+}
+                Role::create(['roleName'=>$request->roleName,'permission'=>$request->permission]);
+                return  'Role created successfully completed';
+            }
+    }
+
+    public function getRoles(Request $request)
+    {
+
+           return Role::find($request->id);
+
+    }
+
+
+
 }

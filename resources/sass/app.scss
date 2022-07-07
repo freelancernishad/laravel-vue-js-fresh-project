@@ -48,3 +48,34 @@
     color: white;
 }
 
+
+@media(max-width:767px){
+    .btn-fill-md, .btn-fill-lg, .fw-btn-fill, .btn-fill-lmd {
+font-size: 13px;
+padding: 8px 15px;
+}
+th, th label {
+font-size: 13px !important;
+}td {
+font-size: 12px;
+
+}
+
+.tablecolhide{
+display: none;
+}
+.textwrap{
+white-space: break-spaces;
+}
+.mobilefonthead {
+font-size: 14px;
+}
+
+.fixednav {
+position: fixed;
+width: 100%;
+z-index: 10;
+}
+
+
+}

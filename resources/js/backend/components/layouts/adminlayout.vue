@@ -2,7 +2,7 @@
     <div id="wrapper" class="wrapper bg-ash"
         :class="{ 'sidebar-collapsed': sidebarstatus, 'sidebar-collapsed-mobile': mobileSidebar }">
         <!-- Header Menu Area Start Here -->
-        <div class="navbar navbar-expand-md header-menu-one bg-light">
+        <div class="navbar navbar-expand-md header-menu-one bg-light" id='topnavbar'>
             <div class="nav-bar-header-one">
                 <div class="header-logo">
                     <a href="index.html">
@@ -47,8 +47,8 @@
                         <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                             aria-expanded="false">
                             <div class="admin-title">
-                                <h5 class="item-title">{{ $localStorage.getItem('user') }}</h5>
-                                <span>{{ $localStorage.getItem('role') }}</span>
+                                <h5 class="item-title">{{ user.name }}</h5>
+                                <span>{{ permission.roleName }}</span>
                             </div>
                             <div class="admin-img">
                                 <img :src="$asseturl + 'dashboard_asset/img/figure/admin.jpg'" alt="Admin">
@@ -79,15 +79,22 @@
             <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
                 <div class="mobile-sidebar-header d-md-none">
                     <div class="header-logo">
-                        <a href="/"><img src="" alt="logo"></a>
+                        <a href="/" style="    padding: 10px !important;"><img :src="$asseturl + 'dashboard_asset/img/logo.png'" alt="logo"></a>
                     </div>
                 </div>
                 <div class="sidebar-menu-content" id="dashboardheight">
                     <ul class="nav nav-sidebar-menu sidebar-toggle-view navBar">
-                        <li class="nav-item" @click="submenu(0)">
-                            <router-link :to="{name:'home'}" class="nav-link"><i
-                                    class="flaticon-dashboard"></i><span>Dashboard</span></router-link>
+
+
+
+
+
+                        <li v-for="(menuList,index) in userPermission" class="nav-item" @click="submenu(index)" v-if="menuList.read">
+                            <router-link :to="{name:menuList.name}" class="nav-link"><i
+                                    class="flaticon-dashboard"></i><span>{{ menuList.resourceName }}</span></router-link>
                         </li>
+
+
 
 
 
@@ -127,22 +134,38 @@
 </template>
 <script>
 export default {
-     props: ['user'],
+     props: ['user','permission','roles'],
     created() {
+
+
+
+
 
 		if (!User.loggedIn()) {
 			window.location.href = '/'
 		}
 
-        console.log(this.user)
+
+
+       this.$store.commit('setUpdateUser', this.user)
+       this.$store.commit('setUserPermission', JSON.parse(this.permission.permission))
+       this.$store.commit('setUserRoles', this.roles)
+
+
+
+//  this.$store.dispatch("getUser",this.user);
+
+
         if (localStorage.getItem('selectedMenu')) {
             this.selected = localStorage.getItem('selectedMenu')
         }
         window.addEventListener("resize", this.myEventHandler);
+        window.addEventListener("scroll", this.myscroll);
 
     },
     destroyed() {
         window.removeEventListener("resize", this.myEventHandler);
+        window.removeEventListener("scroll", this.myscroll);
     },
     data() {
         return {
@@ -152,6 +175,27 @@ export default {
         }
     },
     methods: {
+
+        myscroll(){
+
+
+
+// Get the header
+var header = document.getElementById("topnavbar");
+
+var sticky = header.offsetTop;
+
+
+  if (window.pageYOffset > sticky) {
+    header.classList.add("fixednav");
+  } else {
+    header.classList.remove("fixednav");
+  }
+
+
+
+        },
+
         myEventHandler() {
             if (window.innerWidth > 768) {
                 this.sidebarstatus = false
@@ -165,8 +209,7 @@ export default {
             //     index= 0
             // }
                 var clientHeight = document.getElementsByClassName('navBar')[0].clientHeight;
-                        // console.log('menu height:',clientHeight)
-                        // console.log('window height:',window.innerHeight )
+
             var menuheight = 0
             if(clientHeight<window.innerHeight){
                 menuheight= window.innerHeight
@@ -187,7 +230,7 @@ export default {
 
         },
         submenu(ref) {
-            console.log(ref)
+
             if (this.selected > 0) {
                 if (ref == this.selected) {
                     this.selected = 0

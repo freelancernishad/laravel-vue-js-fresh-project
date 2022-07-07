@@ -35,3 +35,6 @@ Route::group([
     Route::post('me', [authController::class,'login']);
 
 });
+
+Route::get('get/roles',[authController::class,'getRoles']);
+Route::post('role/assign',[authController::class,'roleAssign']);
