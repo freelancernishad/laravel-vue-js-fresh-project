@@ -64,7 +64,7 @@
               </tr>
               <!-- ITEMS -->
               <div class="center_button">
-                  <Button type="primary" class="btn-fill-lg  text-light radius-4 bg-gradient-gplus" :loading="isSending" :disabled="isSending" @click="assignRoles" >Assign</Button>
+                  <Button type="primary" class="btn-fill-lg  text-light radius-4 bg-gradient-custom" :loading="isSending" :disabled="isSending" @click="assignRoles" >Assign</Button>
               </div>
             </table>
 

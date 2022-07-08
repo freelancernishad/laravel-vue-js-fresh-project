@@ -2162,6 +2162,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   created: function created() {
     if (User.loggedIn()) {
@@ -2198,6 +2233,17 @@ __webpack_require__.r(__webpack_exports__);
         })["catch"](function (error) {
           return _this.errors = error.response.data.errors;
         });
+      }
+    },
+    blur: function blur(id) {
+      var child = document.getElementById(id);
+
+      if (this.form[id] == '') {
+        child.parentNode.classList.remove("blursuccess");
+        child.parentNode.classList.add("blurerror");
+      } else {
+        child.parentNode.classList.remove("blurerror");
+        child.parentNode.classList.add("blursuccess");
       }
     }
   }
@@ -13950,7 +13996,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\np[data-v-2a1c1b9c] {\n  line-height: 1rem;\n}\n.form-group input[data-v-2a1c1b9c] {\n  margin-bottom: 20px;\n}\n.login-page[data-v-2a1c1b9c] {\n  align-items: center;\n  display: flex;\n  height: 100vh;\n}\n.login-page .wallpaper-login[data-v-2a1c1b9c] {\n  background: url(https://images.pexels.com/photos/32237/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat center center;\n  background-size: cover;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n}\n.login-page .fade-enter-active[data-v-2a1c1b9c],\n.login-page .fade-leave-active[data-v-2a1c1b9c] {\n  transition: opacity 0.5s;\n}\n.login-page .fade-enter[data-v-2a1c1b9c],\n.login-page .fade-leave-to[data-v-2a1c1b9c] {\n  opacity: 0;\n}\n.login-page .wallpaper-register[data-v-2a1c1b9c] {\n  background: url(https://images.pexels.com/photos/533671/pexels-photo-533671.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat center center;\n  background-size: cover;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: -1;\n}\n.login-page h1[data-v-2a1c1b9c] {\n  margin-bottom: 1.5rem;\n}\n.error[data-v-2a1c1b9c] {\n  -webkit-animation-name: errorShake-data-v-2a1c1b9c;\n          animation-name: errorShake-data-v-2a1c1b9c;\n  -webkit-animation-duration: 0.3s;\n          animation-duration: 0.3s;\n}\n@-webkit-keyframes errorShake-data-v-2a1c1b9c {\n0% {\n    transform: translateX(-25px);\n}\n25% {\n    transform: translateX(25px);\n}\n50% {\n    transform: translateX(-25px);\n}\n75% {\n    transform: translateX(25px);\n}\n100% {\n    transform: translateX(0);\n}\n}\n@keyframes errorShake-data-v-2a1c1b9c {\n0% {\n    transform: translateX(-25px);\n}\n25% {\n    transform: translateX(25px);\n}\n50% {\n    transform: translateX(-25px);\n}\n75% {\n    transform: translateX(25px);\n}\n100% {\n    transform: translateX(0);\n}\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nsection.vh-100[data-v-2a1c1b9c] {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%,-50%);\n    width: 100%;\n}\n.blurerror input[data-v-2a1c1b9c] {\n    border: 1px solid red !important;\n}\n.blurerror label[data-v-2a1c1b9c] {\n    color:red !important;\n}\n.blursuccess input[data-v-2a1c1b9c] {\n    border: 1px solid green !important;\n}\n.blursuccess label[data-v-2a1c1b9c] {\n    color:green !important;\n}\n.divider[data-v-2a1c1b9c]:after,\n.divider[data-v-2a1c1b9c]:before {\ncontent: \"\";\nflex: 1;\nheight: 1px;\nbackground: #eee;\n}\n*[data-v-2a1c1b9c],\n*[data-v-2a1c1b9c]:focus{outline: none}\n\n/* .form{\n  width: 500px;\n  margin: 0 auto;\n  margin-top: 150px;\n  font-family: sans-serif;\n  background: #fff\n} */\n.form-item[data-v-2a1c1b9c]{\n  position: relative;\n  margin-bottom: 15px\n}\n.form-item input[data-v-2a1c1b9c]{\n  display: block;\n  width: 100%;\n  height: 40px;\n  background: transparent;\n  border: solid 1px #ccc;\n  transition: all .3s ease;\n  padding: 0 15px\n}\n.form-item input[data-v-2a1c1b9c]:focus{\n  border-color: blue\n}\n.form-item label[data-v-2a1c1b9c]{\n  position: absolute;\n  cursor: text;\n  z-index: 2;\n  top: 13px;\n  left: 10px;\n  font-size: 12px;\n  font-weight: bold;\n  background: #fff;\n  padding: 0 10px;\n  color: #999;\n  transition: all .3s ease\n}\n.form-item input:focus + label[data-v-2a1c1b9c],\n.form-item input:valid + label[data-v-2a1c1b9c]{\n  font-size: 11px;\n  top: -5px\n}\n.form-item input:focus + label[data-v-2a1c1b9c]{\n  color: blue\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -18309,57 +18355,79 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "login-page" }, [
-    _c("div", { staticClass: "wallpaper-register" }),
-    _vm._v(" "),
-    _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-4 col-md-6 col-sm-8 mx-auto" }, [
-          _c(
-            "div",
-            { staticClass: "card login", class: { error: _vm.emptyFields } },
-            [
-              _c("div", { staticClass: "card-body" }, [
-                _c("h1", [_vm._v("Sign In")]),
-                _vm._v(" "),
-                _c(
-                  "form",
-                  {
-                    staticClass: "form-group",
-                    on: {
-                      submit: function ($event) {
-                        $event.preventDefault()
-                        return _vm.login.apply(null, arguments)
-                      },
-                    },
+  return _c("section", { staticClass: "vh-100" }, [
+    _c("div", { staticClass: "container-fluid h-custom" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "row d-flex justify-content-center align-items-center h-100",
+        },
+        [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-8 col-lg-6 col-xl-4 offset-xl-1" }, [
+            _c(
+              "form",
+              {
+                on: {
+                  submit: function ($event) {
+                    $event.preventDefault()
+                    return _vm.login.apply(null, arguments)
                   },
-                  [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.email,
-                          expression: "form.email",
+                },
+              },
+              [
+                _c("div", { staticClass: "form" }, [
+                  _c("h1", { staticClass: "text-center mb-5" }, [
+                    _vm._v("Login"),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "form-item", attrs: { id: "inputEmail" } },
+                    [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.email,
+                            expression: "form.email",
+                          },
+                        ],
+                        attrs: {
+                          type: "text",
+                          id: "email",
+                          autocomplete: "off",
+                          required: "",
                         },
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "email",
-                        placeholder: "Email",
-                        required: "",
-                      },
-                      domProps: { value: _vm.form.email },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.form, "email", $event.target.value)
+                        domProps: { value: _vm.form.email },
+                        on: {
+                          blur: function ($event) {
+                            return _vm.blur("email")
+                          },
+                          input: [
+                            function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(_vm.form, "email", $event.target.value)
+                            },
+                            function ($event) {
+                              return _vm.blur("email")
+                            },
+                          ],
                         },
-                      },
-                    }),
-                    _vm._v(" "),
+                      }),
+                      _vm._v(" "),
+                      _c("label", { attrs: { for: "Email" } }, [
+                        _vm._v("Email"),
+                      ]),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-item" }, [
                     _c("input", {
                       directives: [
                         {
@@ -18369,38 +18437,106 @@ var render = function () {
                           expression: "form.password",
                         },
                       ],
-                      staticClass: "form-control",
                       attrs: {
                         type: "password",
-                        placeholder: "Password",
+                        id: "password",
+                        autocomplete: "off",
                         required: "",
                       },
                       domProps: { value: _vm.form.password },
                       on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.form, "password", $event.target.value)
+                        blur: function ($event) {
+                          return _vm.blur("password")
                         },
+                        input: [
+                          function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "password", $event.target.value)
+                          },
+                          function ($event) {
+                            return _vm.blur("password")
+                          },
+                        ],
                       },
                     }),
                     _vm._v(" "),
-                    _c("input", {
-                      staticClass: "btn btn-primary",
-                      attrs: { type: "submit" },
-                    }),
-                  ]
-                ),
-              ]),
-            ]
-          ),
-        ]),
-      ]),
+                    _c("label", { attrs: { for: "password" } }, [
+                      _vm._v("Password"),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _vm._m(1),
+                _vm._v(" "),
+                _vm._m(2),
+              ]
+            ),
+          ]),
+        ]
+      ),
     ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-9 col-lg-6 col-xl-5" }, [
+      _c("img", {
+        staticClass: "img-fluid",
+        attrs: {
+          src: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp",
+          alt: "Sample image",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "d-flex justify-content-between align-items-center" },
+      [
+        _c("div", { staticClass: "form-check mb-0" }, [
+          _c("input", {
+            staticClass: "form-check-input me-2",
+            attrs: { type: "checkbox", value: "", id: "form2Example3" },
+          }),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "form-check-label",
+              attrs: { for: "form2Example3" },
+            },
+            [_vm._v("\n                Remember me\n              ")]
+          ),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center text-lg-start mt-4 pt-2" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary btn-lg",
+          staticStyle: { "padding-left": "2.5rem", "padding-right": "2.5rem" },
+          attrs: { type: "submit" },
+        },
+        [_vm._v("Login")]
+      ),
+    ])
+  },
+]
 render._withStripped = true
 
 

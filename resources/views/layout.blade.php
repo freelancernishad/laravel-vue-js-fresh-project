@@ -24,18 +24,8 @@
     <link rel="stylesheet" href="{{ asset('css/datatables.min.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 <style>
-    .form-group select, .form-group input {
-    border: 1px solid #ffa601 !important;
-    background: #dfdfdf !important;
-}
-.form-check label:before {
 
-    border: 1px solid #ffa601 !important;
 
-}
-div#datatable_filter {
-    display: none !important;
-}
 </style>
     {{-- <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.12.1/css/dataTables.semanticui.min.css">

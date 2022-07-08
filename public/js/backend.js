@@ -2948,7 +2948,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['user', 'permission', 'roles'],
   created: function created() {
@@ -72702,7 +72701,7 @@ var render = function () {
                     "Button",
                     {
                       staticClass:
-                        "btn-fill-lg  text-light radius-4 bg-gradient-gplus",
+                        "btn-fill-lg  text-light radius-4 bg-gradient-custom",
                       attrs: {
                         type: "primary",
                         loading: _vm.isSending,
@@ -72843,16 +72842,22 @@ var render = function () {
         },
         [
           _c("div", { staticClass: "nav-bar-header-one" }, [
-            _c("div", { staticClass: "header-logo" }, [
-              _c("a", { attrs: { href: "index.html" } }, [
-                _c("img", {
-                  attrs: {
-                    src: _vm.$asseturl + "dashboard_asset/img/logo.png",
-                    alt: "logo",
-                  },
-                }),
-              ]),
-            ]),
+            _c(
+              "div",
+              { staticClass: "header-logo" },
+              [
+                _c("router-link", { attrs: { to: { name: "Dashboard" } } }, [
+                  _c("img", {
+                    attrs: {
+                      width: "80%",
+                      src: "http://esoft4u.tmscedu.com/asset/img/Logo123.png",
+                      alt: "logo",
+                    },
+                  }),
+                ]),
+              ],
+              1
+            ),
             _vm._v(" "),
             _c("div", { staticClass: "toggle-button sidebar-toggle" }, [
               _c(
@@ -72983,25 +72988,7 @@ var render = function () {
               "sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color",
           },
           [
-            _c("div", { staticClass: "mobile-sidebar-header d-md-none" }, [
-              _c("div", { staticClass: "header-logo" }, [
-                _c(
-                  "a",
-                  {
-                    staticStyle: { padding: "10px !important" },
-                    attrs: { href: "/" },
-                  },
-                  [
-                    _c("img", {
-                      attrs: {
-                        src: _vm.$asseturl + "dashboard_asset/img/logo.png",
-                        alt: "logo",
-                      },
-                    }),
-                  ]
-                ),
-              ]),
-            ]),
+            _vm._m(3),
             _vm._v(" "),
             _c(
               "div",
@@ -73057,7 +73044,7 @@ var render = function () {
         _c(
           "div",
           { staticClass: "dashboard-content-one" },
-          [_vm._t("default"), _vm._v(" "), _vm._m(3)],
+          [_vm._t("default"), _vm._v(" "), _vm._m(4)],
           2
         ),
       ]),
@@ -73106,6 +73093,28 @@ var staticRenderFns = [
             _c("button", { attrs: { type: "submit" } }),
           ]),
         ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mobile-sidebar-header d-md-none" }, [
+      _c("div", { staticClass: "header-logo" }, [
+        _c(
+          "a",
+          { staticStyle: { padding: "10px !important" }, attrs: { href: "/" } },
+          [
+            _c("img", {
+              attrs: {
+                width: "80%",
+                src: "http://esoft4u.tmscedu.com/asset/img/Logo123.png",
+                alt: "logo",
+              },
+            }),
+          ]
+        ),
       ]),
     ])
   },

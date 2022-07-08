@@ -1,31 +1,66 @@
 <template>
 
 
-   <div class="login-page">
-      <div class="wallpaper-register"></div>
-
-      <div class="container">
-         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-8 mx-auto">
-               <div class="card login" v-bind:class="{ error: emptyFields }">
-               <div class="card-body">
-                  <h1>Sign In</h1>
-                  <form class="form-group" @submit.prevent='login'>
-                     <input v-model="form.email" type="email" class="form-control" placeholder="Email" required>
-                     <input v-model="form.password" type="password" class="form-control" placeholder="Password" required>
-                     <input type="submit" class="btn btn-primary" >
-
-                  </form>
-               </div>
-</div>
-            </div>
-         </div>
-
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+          class="img-fluid" alt="Sample image">
       </div>
-   </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
 
 
 
+
+
+
+
+
+
+
+        <form @submit.prevent='login'>
+      <div class="form">
+  <h1 class="text-center mb-5">Login</h1>
+  <div class="form-item" id="inputEmail">
+    <input type="text" id="email" v-model="form.email" @blur="blur('email')" @input="blur('email')" autocomplete="off" required >
+    <label for="Email">Email</label>
+  </div>
+  
+  <div class="form-item">
+    <input type="password" id="password" v-model="form.password" @blur="blur('password')" @input="blur('password')"   autocomplete="off" required>
+    <label for="password">Password</label>
+  </div>
+  
+</div>
+
+
+
+
+
+          <div class="d-flex justify-content-between align-items-center">
+            <!-- Checkbox -->
+            <div class="form-check mb-0">
+              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+              <label class="form-check-label" for="form2Example3">
+                Remember me
+              </label>
+            </div>
+          
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+        
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  
+</section>
 
 
 
@@ -86,75 +121,102 @@ export default {
 
 
 
-		}
+		},
+
+
+        blur(id){
+        const child = document.getElementById(id);
+            if(this.form[id]==''){
+                child.parentNode.classList.remove("blursuccess");
+                child.parentNode.classList.add("blurerror");
+            }else{
+                child.parentNode.classList.remove("blurerror");
+                child.parentNode.classList.add("blursuccess");
+            }
+           
+        },
+
+
+
+
 	}
 }
 </script>
 
 <style lang="css" scoped>
-p {
-  line-height: 1rem;
+
+section.vh-100 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
 }
-
-
-
-.form-group input {
-  margin-bottom: 20px;
+.blurerror input {
+    border: 1px solid red !important;
 }
-
-.login-page {
-  align-items: center;
-  display: flex;
-  height: 100vh;
+.blurerror label {
+    color:red !important;
 }
-.login-page .wallpaper-login {
-  background: url(https://images.pexels.com/photos/32237/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat center center;
-  background-size: cover;
-  height: 100%;
-  position: absolute;
+.blursuccess input {
+    border: 1px solid green !important;
+}
+.blursuccess label {
+    color:green !important;
+}
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+*,
+*:focus{outline: none}
+
+/* .form{
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 150px;
+  font-family: sans-serif;
+  background: #fff
+} */
+.form-item{
+  position: relative;
+  margin-bottom: 15px
+}
+.form-item input{
+  display: block;
   width: 100%;
+  height: 40px;
+  background: transparent;
+  border: solid 1px #ccc;
+  transition: all .3s ease;
+  padding: 0 15px
 }
-.login-page .fade-enter-active,
-.login-page .fade-leave-active {
-  transition: opacity 0.5s;
+.form-item input:focus{
+  border-color: blue
 }
-.login-page .fade-enter,
-.login-page .fade-leave-to {
-  opacity: 0;
-}
-.login-page .wallpaper-register {
-  background: url(https://images.pexels.com/photos/533671/pexels-photo-533671.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat center center;
-  background-size: cover;
-  height: 100%;
+.form-item label{
   position: absolute;
-  width: 100%;
-  z-index: -1;
+  cursor: text;
+  z-index: 2;
+  top: 13px;
+  left: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  background: #fff;
+  padding: 0 10px;
+  color: #999;
+  transition: all .3s ease
 }
-.login-page h1 {
-  margin-bottom: 1.5rem;
+.form-item input:focus + label,
+.form-item input:valid + label{
+  font-size: 11px;
+  top: -5px
 }
-
-.error {
-  animation-name: errorShake;
-  animation-duration: 0.3s;
-}
-
-@keyframes errorShake {
-  0% {
-    transform: translateX(-25px);
-  }
-  25% {
-    transform: translateX(25px);
-  }
-  50% {
-    transform: translateX(-25px);
-  }
-  75% {
-    transform: translateX(25px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+.form-item input:focus + label{
+  color: blue
 }
 
 </style>

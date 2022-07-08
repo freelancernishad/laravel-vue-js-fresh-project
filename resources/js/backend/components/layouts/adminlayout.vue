@@ -5,9 +5,9 @@
         <div class="navbar navbar-expand-md header-menu-one bg-light" id='topnavbar'>
             <div class="nav-bar-header-one">
                 <div class="header-logo">
-                    <a href="index.html">
-                        <img :src="$asseturl + 'dashboard_asset/img/logo.png'" alt="logo">
-                    </a>
+                    <router-link :to="{name:'Dashboard'}">
+                        <img width="80%" src="http://esoft4u.tmscedu.com/asset/img/Logo123.png" alt="logo">
+                    </router-link>
                 </div>
                 <div class="toggle-button sidebar-toggle">
                     <button type="button" class="item-link" @click="sidebarstatus = !sidebarstatus">
@@ -79,7 +79,7 @@
             <div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
                 <div class="mobile-sidebar-header d-md-none">
                     <div class="header-logo">
-                        <a href="/" style="    padding: 10px !important;"><img :src="$asseturl + 'dashboard_asset/img/logo.png'" alt="logo"></a>
+                        <a href="/" style="    padding: 10px !important;"><img width="80%" src="http://esoft4u.tmscedu.com/asset/img/Logo123.png" alt="logo"></a>
                     </div>
                 </div>
                 <div class="sidebar-menu-content" id="dashboardheight">
@@ -93,7 +93,6 @@
                             <router-link :to="{name:menuList.name}" class="nav-link"><i
                                     class="flaticon-dashboard"></i><span>{{ menuList.resourceName }}</span></router-link>
                         </li>
-
 
 
 

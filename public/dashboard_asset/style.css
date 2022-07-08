@@ -1,13 +1,13 @@
 /**************************************
 
-Template Name: Akkhor 
+Template Name: Akkhor
 Template URL: https://www.radiustheme.com/demo/html/psdboss/akkhor/
 Description: School Management Admin Dashboard HTML Template
 Author: PsdBosS
 Author URL: https://themeforest.net/user/psdboss
-Version: 1.0 
+Version: 1.0
 
-======================================  
+======================================
         Table Of Contents
 ======================================
 1. TYPOGRAPHY
@@ -28,7 +28,7 @@ Version: 1.0
     4.2 Button
 5. PAGE LAYOUT STYLE
     5.1 Content
-    5.2 Default 
+    5.2 Default
     5.3 Footer
     5.4 Header Menu
     5.5 Sidebar Menu
@@ -59,6 +59,91 @@ Version: 1.0
 [01] TYPOGRAPHY
 =========================================================================*/
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900);
+
+
+
+*{
+    --defaultColor: #007575;
+    --bgColor2: #007575;
+    --bgColor1: #00B7B7;
+    --sidebarColor: #191f25;
+    --navItemHover: #334c4c;
+}
+
+    .form-group select, .form-group input {
+    border: 1px solid var(--bgColor2) !important;
+    background: #dfdfdf !important;
+}
+.form-check label:before {
+
+    border: 1px solid var(--bgColor2) !important;
+
+}
+div#datatable_filter {
+    display: none !important;
+}
+.sidebar-color {
+    background: var(--sidebarColor) !important;
+}
+li.nav-item:hover {
+    background: var(--navItemHover);
+}
+.nav-bar-header-one {
+    background: linear-gradient(to right, var(--bgColor1), var(--bgColor1)) !important;
+
+}
+div#topnavbar {
+    background: var(--bgColor2) !important;
+}
+.admin-title h5,.admin-title span {
+    color: white !important;
+}
+.header-main-menu .navbar-nav .header-admin .dropdown-menu .item-header {
+
+    background-color: var(--bgColor1) !important;
+
+}
+
+.header-main-menu .navbar-nav .header-admin .dropdown-menu .item-header:after {
+
+    border-bottom: 10px solid var(--bgColor1) !important;
+
+}
+
+.breadcrumbs-area ul li {
+    display: inline-block;
+    color: var(--defaultColor);
+    font-size: 16px;
+    position: relative;
+    margin-right: 15px;
+    padding-right: 10px;
+}
+.sidebar-menu-one .sidebar-menu-content .nav-sidebar-menu > .nav-item > .nav-link span {
+
+    color: #ffffff !important;
+ 
+}
+a.nav-link.router-link-exact-active.router-link-active {
+    background: var(--navItemHover);
+}
+
+
+body::-webkit-scrollbar,#dashboardheight::-webkit-scrollbar {
+    width: 4px;
+}
+body::-webkit-scrollbar-track, #dashboardheight::-webkit-scrollbar-track {
+    background: #191f25;
+}
+body::-webkit-scrollbar-thumb, #dashboardheight::-webkit-scrollbar-thumb {
+    background-color: #e1e1e1;
+    border-radius: 5px;
+    border: 3px solid #007575;
+}
+.d-md-none.mobile-nav-bar button {
+    color: white !important;
+}
+
+
 html {
   height: 100%;
   font-size: 62.5%;
@@ -1302,7 +1387,7 @@ h6 {
 }
 .breadcrumbs-area ul li {
   display: inline-block;
-  color: #fea801;
+  color: var(--defaultColor);
   font-size: 16px;
   position: relative;
   margin-right: 15px;
@@ -1322,7 +1407,7 @@ h6 {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
   z-index: 5;
-  color: #fea801;
+  color: var(--defaultColor);
 }
 .breadcrumbs-area ul li a {
   color: #646464;
@@ -1333,7 +1418,7 @@ h6 {
   transition: all 0.3s ease-out;
 }
 .breadcrumbs-area ul li a:hover {
-  color: #fea801;
+  color: var(--defaultColor);
 }
 .breadcrumbs-area ul li:last-child {
   margin-right: 0;
@@ -2118,7 +2203,7 @@ ul {
   padding: 12px 25px;
 }
 .sidebar-menu-one .sidebar-menu-content .nav-sidebar-menu > .nav-item > .nav-link i:before {
-  color: #ffa901;
+  color: var(--defaultColor);
   font-size: 18px;
   margin-right: 15px;
   margin-left: 0;
@@ -2136,7 +2221,7 @@ ul {
   background-color: #051f3e;
 }
 .sidebar-menu-one .sidebar-menu-content .nav-sidebar-menu > .nav-item .nav-link.menu-active span {
-  color: #ffa901;
+  color: var(--defaultColor);
 }
 .sidebar-menu-one .sidebar-menu-content .nav-sidebar-menu > .nav-item .sub-group-menu {
   display: none;
@@ -2160,7 +2245,7 @@ ul {
 }
 .sidebar-menu-one .sidebar-menu-content .nav-sidebar-menu > .nav-item .sub-group-menu > .nav-item .nav-link.menu-active {
   background-color: #042954;
-  color: #ffa901;
+  color: var(--defaultColor);
 }
 .sidebar-menu-one .sidebar-menu-content .nav-sidebar-menu > .nav-item .sub-group-menu.sub-group-active {
   display: block;
@@ -2232,7 +2317,7 @@ ul {
   text-align: center;
 }
 .sidebar-menu-two .sidebar-menu-content .nav-sidebar-menu > .nav-item > .nav-link i:before {
-  color: #fea801;
+  color: var(--defaultColor);
   font-size: 24px;
   margin-left: 0;
 }
@@ -3556,7 +3641,7 @@ ul {
   color: #ffaa01;
 }
 /*=======================================================================
-7. DASHBOARD STYLES 
+7. DASHBOARD STYLES
 =========================================================================*/
 /*=============== 7.1 Dashboard Page One ==================*/
 .dashboard-page-one {
@@ -4266,6 +4351,25 @@ ul {
   background: -o-linear-gradient(left, #e84642, #f81b1b);
   background: linear-gradient(to right, #e84642, #f81b1b);
 }
+
+
+.bg-gradient-custom {
+  background: -webkit-gradient(linear, left top, right top, from(var(--bgColor1), var(--bgColor2)));
+  background: -webkit-linear-gradient(left, var(--bgColor1), var(--bgColor2));
+  background: -o-linear-gradient(left, var(--bgColor1), var(--bgColor2));
+  background: linear-gradient(to right,var(--bgColor1), var(--bgColor2));
+  transition:all 0.4s;
+}
+
+.bg-gradient-custom:hover {
+    background: -webkit-gradient(linear, left top, right top, from(var(--bgColor2),var(--bgColor1)));
+    background: -webkit-linear-gradient(left, var(--bgColor2),var(--bgColor1));
+    background: -o-linear-gradient(left, var(--bgColor2),var(--bgColor1));
+    background: linear-gradient(to right,var(--bgColor2),var(--bgColor1));
+  }
+  
+
+
 .bg-gradient-linked {
   background: -webkit-gradient(linear, left top, right top, from(#1565c0), to(#314ce0));
   background: -webkit-linear-gradient(left, #1565c0, #314ce0);
