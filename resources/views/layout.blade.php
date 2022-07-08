@@ -23,7 +23,23 @@
     {{-- <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
     <link rel="stylesheet" href="{{ asset('css/datatables.min.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+<style>
+    .form-group select, .form-group input {
+    border: 1px solid #ffa601 !important;
+    background: #dfdfdf !important;
+}
+.form-check label:before {
 
+    border: 1px solid #ffa601 !important;
+
+}
+div#datatable_filter {
+    display: none !important;
+}
+</style>
+    {{-- <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.12.1/css/dataTables.semanticui.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.semanticui.min.css"> --}}
 
 </head>
 <body>
@@ -34,7 +50,15 @@
           </component>
 
 </div>
+
+
+
+
 <script src="{{ asset('js/backend.js') }}"></script>
+
+
+
+
 <!-- Popper js -->
 <script src="{{ asset('dashboard_asset/js/popper.min.js') }}"></script>
 <!-- Bootstrap js -->
