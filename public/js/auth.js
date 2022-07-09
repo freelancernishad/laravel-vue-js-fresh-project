@@ -2393,6 +2393,17 @@ var Notification = /*#__PURE__*/function () {
       this.errorSound();
     }
   }, {
+    key: "customdelete",
+    value: function customdelete(mess) {
+      new Noty({
+        type: 'error',
+        layout: 'topRight',
+        text: mess,
+        timeout: 2000
+      }).show();
+      this.deleteSound();
+    }
+  }, {
     key: "not_found",
     value: function not_found() {
       new Noty({

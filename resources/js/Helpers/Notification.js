@@ -57,6 +57,15 @@ class Notification{
         this.errorSound()
 	}
 
+    customdelete (mess){
+		new Noty({
+			type: 'error',
+			layout: 'topRight',
+			text: mess,
+			timeout: 2000,
+		}).show();
+        this.deleteSound();
+	}
 	not_found(){
 		new Noty({
 			type: 'error',
