@@ -9,9 +9,15 @@ require('../bootstrap');
 
 
 // Vue.use(moment)
-import { Datetime } from 'vue-datetime';
-import 'vue-datetime/dist/vue-datetime.css'
-Vue.component('datetime', Datetime);
+// import { Datetime } from 'vue-datetime';
+// import 'vue-datetime/dist/vue-datetime.css'
+// Vue.component('datetime', Datetime);
+
+
+
+
+
+
 
 // Vue.use(require('vue-moment'));
 
@@ -24,20 +30,20 @@ Vue.component('datetime', Datetime);
 // require( 'datatables.net-buttons-dt' );
 // require( 'datatables.net-bs5' );
 // require( 'datatables.net-buttons-bs5' );
-require( 'datatables.net-bs4' );
-require( 'datatables.net-buttons-bs4' );
+// require( 'datatables.net-bs4' );
+// require( 'datatables.net-buttons-bs4' );
 
 // require( 'datatables.net-buttons/js/buttons.colVis.js' );
 // require( 'datatables.net-buttons/js/buttons.html5.js' );
 // require( 'datatables.net-buttons/js/buttons.print.js' );
 
-require( 'datatables.net-buttons/js/buttons.colVis.js' )();
-require( 'datatables.net-buttons/js/buttons.html5.js' )();
-require( 'datatables.net-buttons/js/buttons.print.js' )();
+// require( 'datatables.net-buttons/js/buttons.colVis.js' )();
+// require( 'datatables.net-buttons/js/buttons.html5.js' )();
+// require( 'datatables.net-buttons/js/buttons.print.js' )();
 
 
 // require( 'datatables.net-colreorder-dt' );
-require( 'datatables.net-datetime' );
+// require( 'datatables.net-datetime' );
 // require( 'datatables.net-fixedcolumns-dt' );
 // require( 'datatables.net-fixedheader-dt' );
 // require( 'datatables.net-keytable-dt' );
@@ -51,15 +57,31 @@ require( 'datatables.net-datetime' );
 // require( 'datatables.net-staterestore-dt' );
 
 
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
+// Import Bootstrap and BootstrapVue CSS files (order is important)
+// import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+// Make BootstrapVue available throughout your project
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
 
+import Swal from 'sweetalert2'
+window.Swal = Swal;
 
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 import {routes} from './routes';
 
 import store from './store'
+
+import tablecom from '../table.vue'
+Vue.component('TableComponent', tablecom);
+
+
+
 window.Reload = new Vue();
 const router = new VueRouter({
   routes,
